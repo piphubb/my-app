@@ -26,16 +26,16 @@ export default App;*/
 
 import React from 'react';
 import './App.css';
-import MyImage from './imgs/capture.jpg';
+//import MyImage from './imgs/capture.jpg';
 import Navbar from './component/Navbar';
 import Footer from './component/Footer';
 import Content from './component/Content';
 
 function App(){
 
-  const menus = () => {
+  // const menus = () => {
     
-  }
+  // }
 
   return(
 
