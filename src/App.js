@@ -24,16 +24,37 @@ function App() {
 
 export default App;*/
 
+import React from 'react';
 import './App.css';
+import MyImage from './imgs/capture.jpg';
+import Navbar from './component/Navbar';
+import Footer from './component/Footer';
+import Content from './component/Content';
 
 function App(){
+
+  const menus = () => {
+    
+  }
+
   return(
-    <div className="App">
-      <h1>
-        Hello Reat js
-      </h1>
-    </div>
-  )
+
+    // <div>
+    //     <h1 className="App">Hello world</h1>
+    //     <p>This is my 5+5 paragraph</p>
+    //     <img src={MyImage} alt=""/>
+    //     <input type="text"/>
+    // </div>
+    
+      <>
+
+       <Navbar/>
+          <Content/>
+       <Footer/>
+
+      </>
+      
+  );
 }
 
 export default App;
