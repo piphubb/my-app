@@ -49,6 +49,7 @@ function App(){
       <>
 
        <Navbar/>
+    <h1>hi jenkins</h1>
       <p>Heloo</p>
           <Content/>
        <Footer/>
