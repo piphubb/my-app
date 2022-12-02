@@ -11,11 +11,11 @@ const Navbar = () => {
             {id: 4, title: 'Contact', path: '/contact'},
         ]
 
-        const myStlye = {
+//         const myStlye = {
 
-            color : '#black',
-            background: 'blue',
-        }
+//             color : '#black',
+//             background: 'blue',
+//         }
 
 
     return (
