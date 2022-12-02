@@ -30,6 +30,7 @@ import './App.css';
 import Navbar from './component/Navbar';
 import Footer from './component/Footer';
 import Content from './component/Content';
+import Catagory from './component/Catagory';
 
 function App(){
 

@@ -1,4 +1,6 @@
 import React from "react";
+import "../css/Navbar.css";
+import style from "../css/Navbar.module.css";
 
 const Navbar = () => {
 
@@ -9,14 +11,21 @@ const Navbar = () => {
             {id: 4, title: 'Contact', path: '/contact'},
         ]
 
+        const myStlye = {
+
+            color : '#black',
+            background: 'blue',
+        }
+
+
     return (
         <>
            {/* <a href={props.path}>{props.title}</a> */}
            {/* <a href={props.item.path}>{props.item.title}</a> */}
 
-            <ul>
+            <ul className={style.nav}>
                 {menus.map((item) => (
-                    <li key={item.id}>
+                    <li key={item.id}  style={{listStyleType:'none'}}>
                         <a href={item.path}>{item.title}</a>
                     </li>
                 ))}
