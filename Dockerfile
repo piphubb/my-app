@@ -3,7 +3,7 @@ FROM node:16.18.1 as build
 WORKDIR /app
 COPY ./ ./
 RUN npm install
-RUN npm build
+RUN npm run build
 
 # Deploy on NGINX
 FROM nginx
