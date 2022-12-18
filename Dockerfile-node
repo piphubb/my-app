@@ -3,4 +3,4 @@ FROM node:16.18.1
 #RUN npm install --force
 #RUN npm build
 COPY ./build ./build
-ENTRY ["npx", "serve", "-s", "build"]
+ENTRYPOINT ["npx", "serve", "-s", "build"]

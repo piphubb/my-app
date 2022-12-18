@@ -50,9 +50,15 @@ function App(){
       <>
 
        <Navbar/>
+<<<<<<< HEAD
           <h1>hi jenkins</h1>
           <p>Heloo</p>
+=======
+            <h1>hi jenkins</h1>
+            <p>Heloo</p>
+>>>>>>> bd8cda0cdcb3ed343704d48112ca43b2b429c652
           <Content/>
+            <h1>hi jenkins</h1>
        <Footer/>
 
       </>

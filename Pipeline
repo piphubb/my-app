@@ -1,0 +1,38 @@
+pipeline{
+    agent{
+        label 'master' //build in
+    }
+    tools{
+        nodejs '16.18.1'
+    }
+    stages{
+        stage("Get Resource from Github"){
+            steps{
+                echo "Get Resource from Github"
+                sh 'docker ps'
+                git branch: 'main', credentialsId: 'b1daeab9-e68b-465f-a9d5-9d22d04bdfe4', url: 'https://gitlab.com/piphubb/phub-shot.git'
+            }
+        }
+        stage("Build Project"){
+            steps{
+                echo "Build Project"
+                sh 'npm install --force'
+                sh 'npm run build'
+            }
+        }
+        stage("Deploy"){
+            steps{
+                script{
+                    try{
+                        sh "docker rm -f myapp-cont"
+                        sh "docker image rm myapp"
+                    }catch(err){
+                        echo "Error: " + err
+                    }
+                    sh "docker build -t myapp ."
+                    sh "docker run -p 8899:3000 --name myapp-cont -d myapp"
+                }
+            }
+        }
+    }
+}
