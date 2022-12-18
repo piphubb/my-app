@@ -1,5 +1,5 @@
 # Build with NODE
-FROM node:lts as build
+FROM node:16.18.1 as build
 WORKDIR /app
 COPY ./ ./
 RUN npm install
