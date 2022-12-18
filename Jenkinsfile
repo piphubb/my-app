@@ -16,10 +16,8 @@ pipeline {
         }
         stage("Deploy Kubernetes Services"){
            steps{
-            
             sh 'scp -o StrictHostKeyChecking=no reactjs.sh phub@35.240.211.187:/home/phub/k8s-files/reactjs.sh'
             sh "ssh -o StrictHostKeyChecking=no phub@35.240.211.187 bash /home/phub/k8s-files/reactjs.sh ${env.BUILD_NUMBER}"   
-            
            }
         }
     }
