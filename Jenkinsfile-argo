@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Trigger Other Pipeline Project') {
             steps {
-               build job: './argo-configuration-pipe', parameters: [string(name: 'TAG_FOR_ARGO', value: "${BUILD_NUMBER}")]
+               build job: './test-argo-02', parameters: [string(name: 'VERSION', value: "${BUILD_NUMBER}")]
             }
         }
     }
