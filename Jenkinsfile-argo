@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('BUILD AND PUSH') {
+            steps {
+                script{
+                    docker.withRegistry('', 'f8cee150-5fb8-47a5-b57f-c5ed3094651f'){
+                        docker.build("piphubb/reactjs-argo").push("${BUILD_NUMBER}")
+                    }
+                }
+            }
+        }
+        stage('Trigger Other Pipeline Project') {
+            steps {
+               build job: './argo-configuration-pipe', parameters: [string(name: 'TAG_FOR_ARGO', value: "${BUILD_NUMBER}")]
+            }
+        }
+    }
+}
